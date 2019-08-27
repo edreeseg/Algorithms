@@ -3,8 +3,13 @@
 import sys
 
 def rock_paper_scissors(n):
-  pass 
-
+  games = []
+  def construct_games(cache=[]):
+    if len(cache) == n: return games.append(cache)
+    for choice in ['rock', 'paper', 'scissors']:
+      construct_games(cache + [choice])
+  construct_games()
+  return games
 
 if __name__ == "__main__":
   if len(sys.argv) > 1:
