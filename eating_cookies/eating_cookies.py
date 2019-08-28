@@ -22,6 +22,8 @@ def eating_cookies(n, cache=None):
     cache[i] = total
   return cache[n]
 
+print(eating_cookies(4))
+
 if __name__ == "__main__":
   if len(sys.argv) > 1:
     num_cookies = int(sys.argv[1])

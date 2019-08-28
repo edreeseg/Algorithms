@@ -3,8 +3,13 @@
 import sys
 
 def making_change(amount, denominations):
-  pass 
-
+  if amount == 0: return 1
+  cache = [1] + [0] * amount
+  for coin in denominations:
+    for j in range(coin, amount+1):
+      print(f'Coin is {coin} and j is {j}, which adds {cache[j-coin]} to this index.')
+      cache[j] += cache[j-coin]
+  return cache[amount]
 
 if __name__ == "__main__":
   # Test our your implementation from the command line
